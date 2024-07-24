@@ -23,7 +23,7 @@ export default function Navbar() {
                 <a href="about">เกี่ยวกับ</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
-                <a href="/ai">AI ตรรววินิจฉัยโรค</a>
+                <a href="/ai">AI ตรวจวินิจฉัยโรค</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
                 <a href="/aecranking">AEC Ranking</a>
@@ -35,10 +35,10 @@ export default function Navbar() {
                 <a href="/evaluation">การประเมินโยบายสาธารณะ</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
-                <a href="#">ติดต่อ</a>
+                <a href="/contact">ติดต่อ</a>
               </li>
               <li className="text-blue-600 hover:text-white hover:bg-blue-600 mx-4 my-1 border-2 border-blue-600 px-2 rounded-2xl ">
-                <a href="#">LogIn</a>
+                <a href="/signin">LogIn</a>
               </li>
               <li className="text-white bg-blue-600 px-2 rounded-2xl mx-4 my-1 hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600">
                 <a href="#">SignUp</a>
