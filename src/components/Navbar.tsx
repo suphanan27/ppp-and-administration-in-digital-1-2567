@@ -32,10 +32,11 @@ export default function Navbar() {
                 <a href="/chatgpt">ChatGPT</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
-                <a href="/evaluation">การประเมินโยบายสาธารณะ</a>
+                <a href="/productlist">การประเมินโยบายสาธารณะ</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
                 <a href="/contact">ติดต่อ</a>
+                {/* <a href="/addProduct">ติดต่อ</a> */}
               </li>
               <li className="text-blue-600 hover:text-white hover:bg-blue-600 mx-4 my-1 border-2 border-blue-600 px-2 rounded-2xl ">
                 <a href="/signin">LogIn</a>
