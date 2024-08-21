@@ -4,11 +4,33 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function EditProductForm({ id, name, image, price, category }) {
+export default function EditProductForm({
+  id,
+  name,
+  project,
+  implementation,
+  email,
+  mobile,
+  budget,
+  year,
+  evaluasion,
+  weak,
+  strength,
+  development,
+  suggestion,
+}) {
   const [newName, setNewTitle] = useState(name);
-  const [newImage, setNewImage] = useState(image);
-  const [newPrice, setNewPrice] = useState(price);
-  const [newCategory, setNewCategory] = useState(category);
+  const [newProject, setNewProject] = useState(project);
+  const [newImplementation, setImplementation] = useState(implementation);
+  const [newEmail, setEmail] = useState(email);
+  const [newMobile, setNewMobile] = useState(mobile);
+  const [newBudget, setNewBudget] = useState(budget);
+  const [newYear, setNewYear] = useState(year);
+  const [newEvaluasion, setNewEvaluasion] = useState(evaluasion);
+  const [newWeak, setNewWeak] = useState(weak);
+  const [newStrength, setNewStrength] = useState(strength);
+  const [newDevelopment, setNewDevelopment] = useState(development);
+  const [newSuggestion, setNewSuggestion] = useState(suggestion);
 
   const router = useRouter();
 
@@ -17,11 +39,11 @@ export default function EditProductForm({ id, name, image, price, category }) {
 
     try {
       const res = await fetch(`http://localhost:3000/api/products/${id}`, {
-        method: "PUT",
+        method: "PUT",                          
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newName, newImage, newPrice, newCategory }),
+        body: JSON.stringify({ newName, newProject, newImplementation, newEmail, newMobile, newBudget, newYear, newEvaluasion, newWeak, newStrength, newDevelopment, newSuggestion   }),
       });
 
       if (!res.ok) {
@@ -49,19 +71,73 @@ export default function EditProductForm({ id, name, image, price, category }) {
         />
 
         <input
-          onChange={(e) => setNewImage(e.target.value)}
+          onChange={(e) => setNewProject(e.target.value)}
           value={newImage}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
         />
         <input
-          onChange={(e) => setNewPrice(e.target.value)}
+          onChange={(e) => setImplementation(e.target.value)}
           value={newPrice}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
         />
         <input
-          onChange={(e) => setNewCategory(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewMobile(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewBudget(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setButgrt(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewYear(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewEvaluasion(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewWeak(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewStrength(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewDevelopment(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewSuggestion(e.target.value)}
           value={newCategory}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
