@@ -1,7 +1,7 @@
 //components\EditProductForm.jsx
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
-import  Image  from "next/image";
+// import Image from "next/image";
 
 const getProducts = async () => {
   try {
@@ -30,7 +30,7 @@ export default async function ProductsList() {
             การติดตามและประเมินผลยุทธศาสตร์ชาติ 20 ปี
           </h1>
         </div>
-        <div className="text-right">
+        <div className="text-left ml-16">
           <Link className="btn btn-primary" href={"/addProduct"}>
             Add Product
           </Link>
@@ -66,7 +66,7 @@ export default async function ProductsList() {
                     <input type="checkbox" className="checkbox" />
                   </label>
                 </th>
-                <td>
+                {/* <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
@@ -83,13 +83,15 @@ export default async function ProductsList() {
                       <div className="font-bold">{element.name}</div>
                     </div>
                   </div>
-                </td>
+                </td> */}
+                <td>{element.name}</td>
+                <td>{element.project}</td>
                 <td>{element.implementation}</td>
                 <td>{element.email}</td>
                 <td>{element.mobile}</td>
-                <td>{element.butget}</td>
+                <td>{element.budget}</td>
                 <td>{element.year}</td>
-                <td>{element.evaluasion}</td>
+                <td>{element.evaluation}</td>
                 <td>{element.weak}</td>
                 <td>{element.strength}</td>
                 <td>{element.development}</td>

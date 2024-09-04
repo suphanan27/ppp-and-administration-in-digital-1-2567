@@ -1,6 +1,8 @@
 //app\api\products\route.js
+// import connectMongoDB from "@/libs/mongodb";
 import connectMongoDB from "@/libs/mongodb";
-import Product from "@/models/ProductModel";
+// import Product from "@/models/ProductModel";
+import Product from "@/models/Productmodel"
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -18,7 +20,7 @@ export async function POST(request) {
     mobile,
     budget,
     year,
-    evaluasion,
+    evaluation,
     weak,
     strength,
     development,
@@ -33,7 +35,7 @@ export async function POST(request) {
     mobile,
     budget,
     year,
-    evaluasion,
+    evaluation,
     weak,
     strength,
     development,

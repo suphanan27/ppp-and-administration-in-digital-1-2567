@@ -13,7 +13,7 @@ export default function EditProductForm({
   mobile,
   budget,
   year,
-  evaluasion,
+  evaluation,
   weak,
   strength,
   development,
@@ -26,7 +26,7 @@ export default function EditProductForm({
   const [newMobile, setNewMobile] = useState(mobile);
   const [newBudget, setNewBudget] = useState(budget);
   const [newYear, setNewYear] = useState(year);
-  const [newEvaluasion, setNewEvaluasion] = useState(evaluasion);
+  const [newEvaluation, setNewEvaluation] = useState(evaluation);
   const [newWeak, setNewWeak] = useState(weak);
   const [newStrength, setNewStrength] = useState(strength);
   const [newDevelopment, setNewDevelopment] = useState(development);
@@ -39,11 +39,24 @@ export default function EditProductForm({
 
     try {
       const res = await fetch(`http://localhost:3000/api/products/${id}`, {
-        method: "PUT",                          
+        method: "PUT",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newName, newProject, newImplementation, newEmail, newMobile, newBudget, newYear, newEvaluasion, newWeak, newStrength, newDevelopment, newSuggestion   }),
+        body: JSON.stringify({
+          newName,
+          newProject,
+          newImplementation,
+          newEmail,
+          newMobile,
+          newBudget,
+          newYear,
+          newEvaluation,
+          newWeak,
+          newStrength,
+          newDevelopment,
+          newSuggestion,
+        }),
       });
 
       if (!res.ok) {
@@ -63,89 +76,103 @@ export default function EditProductForm({
         <h1 className="font-bold py-10 text-2xl">Update Product</h1>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
-          onChange={(e) => setNewTitle(e.target.value)}
-          value={newName}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
+        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 ml-24">
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="first-name"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              ยุทธศาสตร์ชาติ
+            </label>
+            <div className="mt-2">
+              <input
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                className="input input-bordered input-accent w-full max-w-xs"
+                type="text"
+                placeholder="ยุทธศาสตร์ชาติ"
+              />
+            </div>
+          </div>
+          <input
+            onChange={(e) => setNewTitle(e.target.value)}
+            value={newName}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
 
-        <input
-          onChange={(e) => setNewProject(e.target.value)}
-          value={newImage}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setImplementation(e.target.value)}
-          value={newPrice}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewMobile(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewBudget(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setButgrt(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewYear(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewEvaluasion(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewWeak(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewStrength(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewDevelopment(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
-        <input
-          onChange={(e) => setNewSuggestion(e.target.value)}
-          value={newCategory}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-        />
+          <input
+            onChange={(e) => setNewProject(e.target.value)}
+            value={newproject}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setImplementation(e.target.value)}
+            value={newPrice}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewMobile(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewBudget(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
 
-        <button className="btn btn-primary w-full max-w-xs">
-          Update Product
-        </button>
+          <input
+            onChange={(e) => setNewYear(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewEvaluation(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewWeak(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewStrength(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewDevelopment(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+          <input
+            onChange={(e) => setNewSuggestion(e.target.value)}
+            value={newCategory}
+            className="input input-bordered input-accent w-full max-w-xs"
+            type="text"
+          />
+
+          <button className="btn btn-primary w-full max-w-xs">
+            Update Product
+          </button>
+        </div>
       </form>
     </>
   );

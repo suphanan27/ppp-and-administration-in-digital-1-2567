@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Evaluation from "@/components/Evaluation";
 
 export default function AddProduct() {
   const [name, setName] = useState("");
@@ -12,11 +11,11 @@ export default function AddProduct() {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [budget, setBudget] = useState("");
-  const [year, setYear] = useState("");
+  const [year, setyear] = useState("");
   const [evaluation, setEvaluation] = useState("");
   const [weak, setWeak] = useState("");
   const [strength, setStrength] = useState("");
-  const [development, Development] = useState("");
+  const [development, setDevelopment] = useState("");
   const [suggestion, setSuggestion] = useState("");
 
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !image) {
+    if (!name || !project) {
       alert("Name and image are required.");
       return;
     }
@@ -35,25 +34,20 @@ export default function AddProduct() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           name,
-    project,
-    implementation,
-    email,
-    mobile,
-    budget,
-    year,
-    evaluasion,
-    weak,
-    strength,
-    development,
-    suggestion,
-          
-          
-          }),
-
-
-
+          project,
+          implementation,
+          email,
+          mobile,
+          budget,
+          year,
+          evaluation,
+          weak,
+          strength,
+          development,
+          suggestion,
+        }),
       });
 
       if (res.ok) {
@@ -104,8 +98,8 @@ export default function AddProduct() {
                 value={project}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
-                placeholder="/images/p1.jpg"
-                defaultValue="/images/p1.jpg"
+                placeholder="โครงการ"
+                // defaultValue="/images/p1.jpg"
               />
             </div>
           </div>
@@ -123,7 +117,6 @@ export default function AddProduct() {
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="หน่วยงานที่นำนโยบายไปปฏิบัติ"
-                
               />
             </div>
           </div>
